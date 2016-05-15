@@ -1,0 +1,68 @@
+// ----------------------------------------------------------------------------
+// Widget-Ohheating styles
+// ----------------------------------------------------------------------------
+
+$title-color:       rgba(255, 255, 255, 0.7);
+
+.widget-ohheating {
+  .current {
+  	color: #00aaff;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 300%;
+  }
+  .heating-off {
+  	color: #fff;
+  	background: #590000;
+    //display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 150%;
+  }
+  .heating-steady {
+  	color: #fff;
+  	background: #75CEEB;
+    //display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 150%;
+  }
+  .heating-on {
+  	color: #000;
+  	background: #93EB75;
+    //display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 150%;
+  }
+
+  .unit_temperature {
+    color: #00aaff;
+    font-size: 120%;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  .title {
+    color: $title-color;
+  }
+
+  .unit_target {
+    color: #00aaff;
+    font-size: 120%;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+}

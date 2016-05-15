@@ -1,0 +1,125 @@
+<% content_for :title do %>Thermostat Dashboard<% end %>
+
+<div class="gridster">
+  <ul>
+    <!-- <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
+      <div data-id="weather" data-view="Ohweather"></div>
+    </li> -->
+
+    <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
+      <div data-id="camera1" data-view="Cameras" data-title="Test1"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="temp_up" data-view="Button" data-icon="arrow-up" style="background-color: #cc0000;"></div>
+    </li>
+
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="temp_down" data-view="Button" data-icon="arrow-down" style="background-color: #0000cc;"></div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="thermoTemp" data-view="Ohheating" data-title="Thermostat" data-device="thermoTemp" data-suffix="&deg;F"></div>
+    </li> 
+
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="heatac" data-view="Toggle" data-device="heatac"></div>
+    </li>
+
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="fan_state" data-view="Textbutton" data-device="fan_state" data-title="Fan"></div>
+    </li>
+
+    <!-- <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="Home_Occupied" data-view="Ohcontact" data-title="Home Occupied" data-device="Home_Occupied"></div>
+    </li> -->
+
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="clock2" data-view="Clock"></div>
+    </li>
+
+    <!-- <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="reload" data-view="Reload" data-title="Refresh" ></div>
+    </li> -->
+
+    <!-- <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="cpage3" data-view="Changepage" data-title="Back" data-page="1" data-fasttransition="true" style="background-color:#085C61"></div>
+    </li>
+
+    <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="cpage4" data-view="Changepage" data-icon="arrow-right" data-title="Next" data-page="3" data-fasttransition="true" style="background-color:#085C61"></div>
+    </li> -->
+
+    <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="1" data-view="Number" data-title="1" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="2" data-view="Number" data-title="2" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="3" data-view="Number" data-title="3" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="4" data-view="Number" data-title="4" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="5" data-view="Number" data-title="5" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="6" data-view="Number" data-title="6" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="7" data-view="Number" data-title="7" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="8" data-view="Number" data-title="8" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="9" data-view="Number" data-title="9" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="0" data-view="Number" data-title="0" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="thermoPow" data-view="Textbutton" data-title="System" data-device="thermoPow"></div>
+    </li>
+    <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="send" data-view="Number" data-title="Enter" style="font-size: 26px; font-weight: bold; background-color: #6ea868;"></div>
+    </li>
+    <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="reset" data-view="Number" data-title="Clear" style="font-size: 26px; font-weight: bold; background-color: #cece00;"></div>
+    </li>
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="arm" data-view="Number" data-title="Arm" style="font-size: 28px; font-weight: bolder; background-color: #cc0000;"></div>
+    </li>
+    <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="panicButton" data-view="Panic"></div>
+    </li>
+    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="disarm" data-view="Number" data-title="Disarm" style="font-size: 24px; font-weight: boldest; background-color: #6ea868;"></div>
+    </li>
+
+    <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="door_main" data-view="Iconswitch" data-title="Front Door" data-device="door_main"></div>
+    </li>
+   </ul>
+</div>
+
+
+<div class="gridster">
+  <ul>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="Light_GF_Living_Table" data-view="Ohswitch" data-title="Living Room Table Lamp" data-device="Light_GF_Living_Table"></div>
+    </li>
+
+    <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="cpage3" data-view="Changepage" data-icon="arrow-left" data-title="Back" data-page="1" data-fasttransition="true" style="background-color:#085C61"></div>
+    </li>
+
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="tester1" data-view="numpad"></div>
+    </li>
+
+  </ul>
+</div>

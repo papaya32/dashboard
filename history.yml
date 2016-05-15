@@ -1,0 +1,126 @@
+---
+tester1: ! 'data: {"value":"31","id":"tester1","updatedAt":1461694967}
+
+
+'
+weather: ! 'data: {"now_temp":52,"humidity":70,"temp_low":39,"temp_high":52,"precip":0,"icon":"800","tomorrow_temp_low":42,"tomorrow_temp_high":59,"tomorrow_icon":"802","tomorrow_precip":2,"wind_speed":7,"wind_speed_gust":0,"wind_dir":"NW","id":"weather","updatedAt":1463342020}
+
+
+'
+BR1_desk1: ! 'data: {"state":"OFF","id":"BR1_desk1","updatedAt":1463179002}
+
+
+'
+BR1_desk2: ! 'data: {"state":"OFF","id":"BR1_desk2","updatedAt":1463179002}
+
+
+'
+BR1_desk3: ! 'data: {"state":"OFF","id":"BR1_desk3","updatedAt":1463179005}
+
+
+'
+BR1_desk4: ! 'data: {"state":"OFF","id":"BR1_desk4","updatedAt":1463179002}
+
+
+'
+BR1_wall1: ! 'data: {"state":"OFF","id":"BR1_wall1","updatedAt":1463179003}
+
+
+'
+BR1_bed1: ! 'data: {"state":"OFF","id":"BR1_bed1","updatedAt":1463179159}
+
+
+'
+door_main: ! 'data: {"state":"ON","id":"door_main","updatedAt":1463250476}
+
+
+'
+thermoTemp: ! 'data: {"temperature":70,"target":73,"id":"thermoTemp","updatedAt":1463176853}
+
+
+'
+BR1_nightMode: ! 'data: {"state":"OFF","id":"BR1_nightMode","updatedAt":1463179003}
+
+
+'
+BR1_All_Off: ! 'data: {"state":"ON","id":"BR1_All_Off","updatedAt":1463179003}
+
+
+'
+karma: ! 'data: {"current":75,"id":"karma","updatedAt":1462130465}
+
+
+'
+roomTemp: ! 'data: {"state":"69.0","id":"roomTemp","updatedAt":1462154716}
+
+
+'
+heatac: ! 'data: {"state":"ON","id":"heatac","updatedAt":1463275076}
+
+
+'
+fan_state: ! 'data: {"state":"ON","id":"fan_state","updatedAt":1463342020}
+
+
+'
+fan_button: ! 'data: {"current":"On","id":"fan_button","updatedAt":1462145850}
+
+
+'
+targetTemp: ! 'data: {"state":"70.0","id":"targetTemp","updatedAt":1462154813}
+
+
+'
+roomStatus: ! 'data: {"state":"Uninitialized","id":"roomStatus","updatedAt":1462384957}
+
+
+'
+fanText: ! 'data: {"fanText":"ON","id":"fanText","updatedAt":1462392086}
+
+
+'
+thermoPow: ! 'data: {"fanText":"Off","id":"thermoPow","updatedAt":1462864209}
+
+
+'
+camera1: ! 'data: {"image":"/cameras/snapshot1_new.jpeg","id":"camera1","updatedAt":1462864394}
+
+
+'
+camera2: ! 'data: {"image":"/cameras/snapshot2_old.jpeg","id":"camera2","updatedAt":1462410219}
+
+
+'
+camera3: ! 'data: {"image":"/cameras/snapshot3_old.jpeg","id":"camera3","updatedAt":1462410219}
+
+
+'
+button: ! 'data: {"current":100,"id":"button","updatedAt":1463251163}
+
+
+'
+temp_down: ! 'data: {"icon":"arrow-down","id":"temp_down","updatedAt":1463252472}
+
+
+'
+music_stop: ! 'data: {"icon":"play","id":"music_stop","updatedAt":1463252532}
+
+
+'
+music_playPause: ! 'data: {"icon":"pause","id":"music_playPause","updatedAt":1463339533}
+
+
+'
+music_info: ! 'data: {"artist_class":"artist_medium","song_class":"song_medium","song":"Run
+  Through The Jungle","album":"Chronicle","artist":"Creedence Clearwater Revival","id":"music_info","updatedAt":1463342297}
+
+
+'
+music_volume: ! 'data: {"title":"75%","id":"music_volume","updatedAt":1463342297}
+
+
+'
+music_player: ! 'data: {"song_class":"song_medium","song":"Loading Music...","id":"music_player","updatedAt":1463281677}
+
+
+'

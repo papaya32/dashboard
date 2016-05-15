@@ -1,0 +1,24 @@
+// ----------------------------------------------------------------------------
+// Widget styles
+// ----------------------------------------------------------------------------
+.widget-toggle {
+
+  //background-color: #444 !important;
+
+  .title {
+    color: #fff;
+  }
+
+  .switch-icon-off .switch-icon-on {
+    font-size: 150%;
+  }
+
+  .switch-icon-off {
+    color: #ffffff;
+  }
+
+  .switch-icon-on {
+  	color: #ffffff;
+  }
+
+}
