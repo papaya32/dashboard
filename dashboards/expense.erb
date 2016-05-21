@@ -1,0 +1,93 @@
+<% content_for :title do %>Expense Tracker<% end %>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="clock" data-view="Clock"></div>
+    </li>
+
+    <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="expenseInfo" data-view="Expense"></div>
+    </li>
+
+    <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="cost1" data-view="Number" data-title="1" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost2" data-view="Number" data-title="2" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="cost3" data-view="Number" data-title="3" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="cost4" data-view="Number" data-title="4" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost5" data-view="Number" data-title="5" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="cost6" data-view="Number" data-title="6" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="cost7" data-view="Number" data-title="7" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost8" data-view="Number" data-title="8" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="cost9" data-view="Number" data-title="9" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost0" data-view="Number" data-title="0" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="costPeriod" data-view="Number" data-title="." style="font-size: 42px;"></div>
+    </li>
+    <!-- <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="costSend" data-view="Number" data-title="Enter" style="font-size: 26px; font-weight: bold; background-color: #6ea868;"></div>
+    </li> -->
+    <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="costReset" data-view="Number" data-title="Reset" style="font-size: 26px; font-weight: bold; background-color: #cece00;"></div>
+    </li>
+
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="costUsaa" data-view="Number" data-title="USAA" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="costPaypal" data-view="Number" data-title="PayPal" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="costAmazon" data-view="Number" data-title="Amazon" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="costPurdue" data-view="Number" data-title="Purdue Fed" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="costFood" data-view="Number" data-title="Food" style="background-color: #3232ff; font-size: 150%;"></div>
+    </li>
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="costLiving" data-view="Number" data-title="Living" style="background-color: #3232ff; font-size: 140%;"></div>
+    </li>
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="costSocial" data-view="Number" data-title="Social" style="background-color: #3232ff; font-size: 150%;"></div>
+    </li>
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="costElse" data-view="Number" data-title="Else" style="background-color: #3232ff; font-size: 150%;"></div>
+    </li>
+
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="costYes" data-view="Number" data-title="Yes" style="background-color: #00b300; font-size: 200%;"></div>
+    </li>
+
+    <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="costNope" data-view="Number" data-title="No" style="background-color: #cc0000; font-size: 200%;"></div>
+    </li>
+
+    <li data-row="4" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="costSend" data-view="Number" data-title="Submit" style="backround-color: #333333; font-size: 200%;"></div>
+    </li>
+
+
+  </ul>
+</div>

@@ -8,6 +8,7 @@ gem 'oa-openid'
 gem 'omniauth-heroku', '~> 0.2.0.pre'
 gem 'oauth2'
 gem 'mqtt'
+gem 'mysql2', '~> 0.4.4'
 
 # JSON
 gem 'json'

@@ -16,11 +16,11 @@ class Dashing.Toggle extends Dashing.ClickableWidget
     set: Batman.Property.defaultAccessor.set
 
   @accessor 'iconon',
-    get: -> @['iconon'] ? 'fire'
+    get: -> @['iconon'] ? 'asterisk'
     set: Batman.Property.defaultAccessor.set
 
   @accessor 'iconoff',
-    get: -> @['iconoff'] ? 'asterisk'
+    get: -> @['iconoff'] ? 'fire'
     set: Batman.Property.defaultAccessor.set
 
   @accessor 'icon-style', ->

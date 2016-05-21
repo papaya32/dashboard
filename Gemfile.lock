@@ -89,6 +89,7 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql2 (0.4.4)
     oa-core (0.3.2)
     oa-openid (0.3.2)
       oa-core (= 0.3.2)
@@ -163,6 +164,7 @@ DEPENDENCIES
   dm-sqlite-adapter
   json
   mqtt
+  mysql2 (~> 0.4.4)
   oa-openid
   oauth2
   omniauth-heroku (~> 0.2.0.pre)

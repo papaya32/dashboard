@@ -35,14 +35,9 @@ class Dashing.Number extends Dashing.ClickableWidget
       $.post '/openhab/sendButton'
     else if (numPress == 'reset')
       $.post '/openhab/clearPass'
-#    else if (numPress == 'arm')
-#      $.post '/openhab/dispatch',
-#        deviceId: 'securityState',
-#        command: 'ON'
-#    else if (numPress == 'disarm')
-#      $.post '/openhab/dispatch',
-#        deviceId: 'securityState',
-#        command: 'OFF'
+    else if (numPress.charAt(0) == 'c')
+      $.post '/expense/button',
+        deviceId: numPress
     else
       $.post '/openhab/addNum',
         deviceId: numPress

@@ -16,13 +16,10 @@ class MusicApp
     @globalControl = 0
   end
 
-  def playBruce()
-    puts "Playing Bruce Springsteen"
-    playRadio("3145865860530746807")
-  end
-
   def playRadio(playlist)
     payload = {"jsonrpc" => "2.0" , "method" => "Addons.ExecuteAddon" , "params" => {"addonid" => "plugin.audio.pandoki" , "params" => {"play" => "#{playlist}"}} , "id" => 1}.to_json
+    temp = {"song_class" => "song_big", "artist_class" => "artist_big", "artist" => " ", "album" => " ", "song" => "Starting Music..."}.to_json
+    send_event("music_info", { song_class: "song_big", artist_class: "artist_big", album: " ", artist: " ", song: "Starting Music..." })
     kodiExecute(payload, "play")
     refreshInfo()
   end
@@ -45,99 +42,101 @@ class MusicApp
       req.basic_auth Kodi_User, Kodi_Pass
       req.body = payload
       response = Net::HTTP.new(Kodi_Server, Kodi_Port).start {|http| http.request(req) }
-        puts response.body()
     if attempt == "pause"
-      puts "POINT 1"
       json = JSON.parse(response.body())
       newState = json["result"]["speed"]
-      puts "POINT 4" 
       if newState == 0
         playPause(2)
+        @globalControl = 0
       else
         playPause(1)
+        @globalControl = 1
       end
     elsif attempt == "control"
       json = JSON.parse(payload)
       temp = json["method"]
       if temp == "Player.Stop"
-        send_event('music_info', { artist: "", album: "", song: "Stopped", song_class: "song_medium" })
+        send_event('music_info', { song_class: "song_big", artist: "", album: "", song: "Stopped" })
+        @globalControl = 0
       end
     elsif attempt == "play"
-      send_event('music_info', {artist: "", album: "", song: "Starting Music...", song_class: "song_medium" })
-      counter = 0
+#      send_event('music_info', { song_class: "song_big", artist: "", album: "", song: "Starting Music..." })
+      sleep 1
+      @globalControl = 1
       loop do
-        counter += 1
-        puts "Counter is: ", counter
         sleep 1
         payload = {"jsonrpc" => "2.0", "method" => "Player.GetItem", "params" => {"properties" => ["title", "album", "artist", "duration"], "playerid" => 0}, "id" => "AudioGetItem"}.to_json
         req = Net::HTTP::Post.new("/jsonrpc", initheader = { 'Content-Type' => 'application/json'})
           req.basic_auth Kodi_User, Kodi_Pass
           req.body = payload
           response = Net::HTTP.new(Kodi_Server, Kodi_Port).start {|http| http.request(req) }
-            puts response.body()
         json = JSON.parse(response.body())
-        puts json["result"]["item"]["type"]
-        break if !((json["result"]["item"]["type"] == "unknown") || !(counter == 10) || (json["result"]["item"]["artist"][0] == "Pandoki"))
+        break if !(json["result"]["item"]["type"] == "unknown")
       end
     elsif attempt == "musicInfo"
       json = JSON.parse(response.body())
-      @globalControl = 1
       artist = json["result"]["item"]["artist"][0]
       album = json["result"]["item"]["album"]
       duration = json["result"]["item"]["duration"]
       song = json["result"]["item"]["title"]
 
-      puts artist, song, album, duration
+#      puts artist, song, album, duration
 
       for i in 1..3
         if i == 1
           if (song.length < 20)
             prior = 3
+            songSize = "song_big"
           elsif (song.length < 28)
             prior = 2
+            songSize = "song_medium"
           else
             prior = 1
+            songSize = "song_small"
           end
         end
         i == 2 ? temp = album.length : temp = artist.length
         if i == 2
           if (temp < 30)
             prior2 = 3
+            artistSize = "artist_big"
           elsif (temp < 40)
             prior2 = 2
+            artistSize = "artist_medium"
           else
             prior2 = 1
+            artistSize = "artist_small"
           end
         end
         if i == 3
           if (temp < 30)
             prior3 = 3
+            artistSize = "artist_big"
           elsif (temp < 40)
             prior3 = 2
+            artistSize = "artist_medium"
           else
             prior3 = 1
+            artistSize = "artist_small"
           end
         end
       end
-      if (prior == 1) || (prior2 == 1) || (prior3 == 1)
-        artistSize = "artist_small"
-        songSize = "song_small"
-      elsif ((prior == 1) || (prior2 == 1) || (prior3 == 1)) && (prior == 1)
-        artistSize = "artist_medium"
-        songSize = "song_small"
-      elsif (prior == 2) || (prior2 == 2) || (prior3 == 2)
-        artistSize = "artist_medium"
-        songSize = "song_medium"
-      else
-        artistSize = "artist_big"
-        songSize = "song_big"
-      end
+#      if (prior == 1) || (prior2 == 1) || (prior3 == 1)
+#        artistSize = "artist_small"
+#        songSize = "song_small"
+#      elsif ((prior == 1) || (prior2 == 1) || (prior3 == 1)) && (prior == 1)
+#        artistSize = "artist_medium"
+#        songSize = "song_small"
+#      elsif (prior == 2) || (prior2 == 2) || (prior3 == 2)
+#        artistSize = "artist_medium"
+#        songSize = "song_medium"
+#      else
+#        artistSize = "artist_big"
+#        songSize = "song_big"
+#      end
       counter = 0
 
-      puts artistSize, songSize
-
-#      send_event('music_info', { artist_class: artistSize })
-#      send_event('music_info', { song_class: songSize })
+#      puts artistSize, songSize
       send_event('music_info', { artist_class: artistSize, song_class: songSize, song: song, album: album, artist: artist })
 
       @currentDuration = duration
@@ -146,7 +145,6 @@ class MusicApp
       json = JSON.parse(response.body())
       volume = json["result"]["volume"]
       @volume = volume
-      puts volume
       send_event('music_volume', { title: "#{volume}%" })
 
     end
@@ -162,21 +160,23 @@ class MusicApp
 
   def control(button)
     if button == "music_next"
-      func = "Next"
+      payload = {"jsonrpc" => "2.0", "method" => "Player.GoTo", "params" => {"playerid" => 0, "to" => "next"}, "id" => 1}.to_json
+      kodiExecute(payload, "skip")
       refreshInfo()
     elsif button == "music_back"
-      func = "Previous"
+      payload = {"jsonrpc" => "2.0", "method" => "Player.GoTo", "params" => {"playerid" => 0, "to" => "previous"}, "id" => 1}.to_json
+      kodiExecute(payload, "skip")
       refreshInfo()
     elsif button == "music_stop"
       func = "Stop"
-      send_event('music_info', { song_class: "song_medium", artist: "", album: "", song: "Stopped" })
+      payload = {"jsonrpc" => "2.0", "method" => "Player.#{func}", "params" => { "playerid" => 0 }, "id" => 1}.to_json
+      send_event('music_info', { song_class: "song_big", artist: "", album: "", song: "Stopped" })
+      @globalControl = 0
+      kodiExecute(payload, "control")
     elsif (button == "music_volumeUp") || (button == "music_volumeDown")
-      volumeControl(button)      
+      volumeControl(button)
       refreshInfo()
     end
-    payload = {"jsonrpc" => "2.0", "method" => "Player.#{func}", "params" => { "playerid" => 0 }, "id" => 1}.to_json
-    puts payload
-    kodiExecute(payload, "control")
   end
 
   def volumeControl(button)
@@ -200,9 +200,10 @@ class MusicApp
     refreshInfo()
   end
 
-  SCHEDULER.every '5s' do
+  def refresher()
     if (@globalControl == 1)
       refreshInfo()
     end
   end
+
 end
