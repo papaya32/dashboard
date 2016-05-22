@@ -1,4 +1,100 @@
-<% content_for :title do %>Thermostat Dashboard<% end %>
+<% content_for :title do %>410 Dashboard<% end %>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="clock" data-view="Clock"></div>
+    </li>
+
+    <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
+      <div data-id="weather" data-view="Ohweather"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="BR1_desk1" data-view="Ohswitch" data-title="Left Desk" data-device="BR1_desk1"></div>
+    </li>
+
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="BR1_desk2" data-view="Ohswitch" data-title="Right Desk" data-device="BR1_desk2"></div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="BR1_desk3" data-view="Ohswitch" data-title="TV Light" data-device="BR1_desk3"></div>
+    </li>
+
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="BR1_desk4" data-view="Ohswitch" data-title="LED Lights" data-device="BR1_desk4"></div>
+    </li>
+
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="BR1_wall1" data-view="Ohswitch" data-title="Wall Light" data-device="BR1_wall1"></div>
+    </li>
+
+    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="BR1_bed1" data-view="Ohswitch" data-title="Bed Light" data-device="BR1_bed1"></div>
+    </li>
+
+    <!-- <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="1" data-view="Number" data-title="1" style="font-size: 42px;"></div>
+    </li>
+
+    <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="2" data-view="Number" data-title="2" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="3" data-view="Number" data-title="3" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="4" data-view="Number" data-title="4" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="5" data-view="Number" data-title="5" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="6" data-view="Number" data-title="6" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="7" data-view="Number" data-title="7" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="8" data-view="Number" data-title="8" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="9" data-view="Number" data-title="9" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="0" data-view="Number" data-title="0" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="send" data-view="Number" data-title="Enter" style="font-size: 26px; font-weight: bold; background-color: #6ea868;"></div>
+    </li>
+    <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="reset" data-view="Number" data-title="Clear" style="font-size: 26px; font-weight: bolder; background-color: #cece00;"></div>
+    </li> -->
+
+    <li data-row="4" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="BR1_nightMode" data-view="Ohswitch" data-title="Night Mode" data-device="BR1_nightMode"></div>
+    </li>
+
+    <li data-row="4" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="door_main" data-view="Iconswitch" data-title="Front Door" data-device="door_main"></div>
+    </li>
+
+
+    <li data-row="1" data-col="4" data-sizex="3" data-sizey="1">
+      <div data-id="cpage2" data-view="Changepage" data-page="2" data-title="Thermostat" style="font-size: 200%;" data-fasttransition="true"></div>
+    </li>
+
+    <li data-row="2" data-col="4" data-sizex="3" data-sizey="1">
+      <div data-id="cpage3" data-view="Changepage" data-page="3" data-title="Music" style="font-size: 200%;" data-fasttransition="true"></div>
+    </li>
+
+    <li data-row="3" data-col="4" data-sizex="3" data-sizey="1">
+      <div data-id="cpage4" data-view="Changepage" data-page="4" data-title="Expenses" style="font-size: 200%;" data-fasttransition="true"></div>
+    </li>
+
+  </ul>
+</div>
 
 <div class="gridster">
   <ul>
@@ -92,34 +188,192 @@
     <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
       <div data-id="arm" data-view="Number" data-title="Arm" style="font-size: 28px; font-weight: bolder; background-color: #cc0000;"></div>
     </li>
-    <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+    <!-- <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
       <div data-id="panicButton" data-view="Panic"></div>
-    </li>
+    </li> -->
     <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
       <div data-id="disarm" data-view="Number" data-title="Disarm" style="font-size: 24px; font-weight: boldest; background-color: #6ea868;"></div>
     </li>
 
-    <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+    <!-- <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
       <div data-id="door_main" data-view="Iconswitch" data-title="Front Door" data-device="door_main"></div>
+    </li> -->
+
+    <li data-row="4" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="cpage1" data-view="Changepage" data-title="Home" data-page="1" style="font-size: 200%;" data-fasttransition="true"></div>
     </li>
+
    </ul>
 </div>
 
-
 <div class="gridster">
   <ul>
-
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="Light_GF_Living_Table" data-view="Ohswitch" data-title="Living Room Table Lamp" data-device="Light_GF_Living_Table"></div>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="clock" data-view="Clock"></div>
     </li>
 
-    <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage3" data-view="Changepage" data-icon="arrow-left" data-title="Back" data-page="1" data-fasttransition="true" style="background-color:#085C61"></div>
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="music_bruce" data-view="Button" data-icon="music" data-title="Bruce" style="background-color: #0099e6;"></div>
+    </li>
+
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="music_u2" data-view="Button" data-icon="music" data-title="U2" style="background-color: #0088e6;"></div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="music_greenDay" data-view="Button" data-icon="music" data-title="Green Day" style="background-color: #0099e6;"></div>
+    </li>
+
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="music_killers" data-view="Button" data-icon="music" data-title="The Killers" style="background-color: #0099e6;"></div>
+    </li>
+
+    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="music_playPause" data-view="Button" data-icon="play" style="background-color: #cc0000;"></div>
+    </li>
+
+    <li data-row="1" data-col="3" data-sizex="4" data-sizey="2">
+      <div data-id="music_info" data-view="Player"></div>
+    </li>
+
+    <li data-row="3" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="music_next" data-view="Button" data-icon="fast-forward" style="background-color: #cc0000;"></div>
     </li>
 
     <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
-      <div data-id="tester1" data-view="numpad"></div>
+      <div data-id="music_back" data-view="Button" data-icon="fast-backward" style="background-color: #cc0000;"></div>
+    </li>
+
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="music_stop" data-view="Button" data-icon="stop" style="background-color: #cc0000;"></div>
+    </li>
+
+    <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="music_volume" data-view="Number" style="font-size: 28px; background-color: #00e64d;"></div>
+    </li>
+
+    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="music_volumeUp" data-view="Button" style="background-color: #00e64d;" data-icon="volume-up"></div>
+    </li>
+
+    <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="music_volumeDown" data-view="Button" style="background-color: #00e64d;" data-icon="volume-down"></div>
+    </li>
+
+    <li data-row="4" data-col="3" data-sizex="3" data-sizey="1">
+      <div data-id="cpage1" data-view="Changepage" data-title="Home" data-page="1" data-stagger="false" data-fasttransition="true" style="font-size: 200%;"></div>
+    </li>
+
+    <li data-row="4" data-col="6" data-sizex="2" data-sizey="1">
+      <div data-id="cpage2" data-view="Changepage" data-title="Thermostat" data-page="2" data-stagger="false" data-fasttransition="true" style="font-size: 200%;"></div>
+    </li>
+
+    <li data-row="4" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="cpage4" data-view="Changepage" data-page="4" data-title="Expenses" style="font-size: 200%;" data-fasttransition="true"></div>
     </li>
 
   </ul>
 </div>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="clock" data-view="Clock"></div>
+    </li>
+
+    <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="expenseInfo" data-view="Expense"></div>
+    </li>
+
+    <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="cost1" data-view="Number" data-title="1" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost2" data-view="Number" data-title="2" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="cost3" data-view="Number" data-title="3" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="cost4" data-view="Number" data-title="4" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost5" data-view="Number" data-title="5" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="cost6" data-view="Number" data-title="6" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="cost7" data-view="Number" data-title="7" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost8" data-view="Number" data-title="8" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="cost9" data-view="Number" data-title="9" style="font-size: 42px;"></div>
+    </li>
+
+    <li data-row="4" data-col="6" data-sizex="1" data-sizey="1">
+      <div data-id="cost0" data-view="Number" data-title="0" style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+      <div data-id="costPeriod" data-view="Number" data-title="." style="font-size: 42px;"></div>
+    </li>
+    <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
+      <div data-id="costReset" data-view="Number" data-title="Reset" style="font-size: 26px; font-weight: bold; background-color: #cece00;"></div>
+    </li>
+
+    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="costUsaa" data-view="Number" data-title="USAA" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="costPaypal" data-view="Number" data-title="PayPal" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+    <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+      <div data-id="costAmazon" data-view="Number" data-title="Amazon" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+      <div data-id="costPurdue" data-view="Number" data-title="Purdue Fed" style="background-color: #cc0000; font-size: 120%;"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="costFood" data-view="Number" data-title="Food" style="background-color: #3232ff; font-size: 150%;"></div>
+    </li>
+    <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="costLiving" data-view="Number" data-title="Living" style="background-color: #3232ff; font-size: 140%;"></div>
+    </li>
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="costSocial" data-view="Number" data-title="Social" style="background-color: #3232ff; font-size: 150%;"></div>
+    </li>
+    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="costElse" data-view="Number" data-title="Else" style="background-color: #3232ff; font-size: 150%;"></div>
+    </li>
+
+    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="costYes" data-view="Number" data-title="Yes" style="font-size: 200%;"></div>
+    </li>
+
+    <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+      <div data-id="costNope" data-view="Number" data-title="No" style="font-size: 200%;"></div>
+    </li>
+
+    <li data-row="4" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="costSend" data-view="Number" data-title="Submit" style="font-size: 200%;"></div>
+    </li>
+
+    <li data-row="5" data-col="3" data-sizex="3" data-sizey="1">
+      <div data-id="cpage1" data-view="Changepage" data-title="Home" data-page="1" data-stagger="false" data-fasttransition="true" style="font-size: 200%;"></div>
+    </li>
+
+    <li data-row="5" data-col="6" data-sizex="2" data-sizey="1">
+      <div data-id="cpage2" data-view="Changepage" data-title="Thermostat" data-page="2" data-stagger="false" data-fasttransition="true" style="font-size: 200%;"></div>
+    </li>
+
+    <li data-row="5" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="cpage3" data-view="Changepage" data-page="3" data-title="Music" style="font-size: 200%;" data-fasttransition="true"></div>
+    </li>
+
+
+  </ul>
+</div>
+

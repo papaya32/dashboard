@@ -3,7 +3,7 @@ tester1: ! 'data: {"value":"31","id":"tester1","updatedAt":1461694967}
 
 
 '
-weather: ! 'data: {"now_temp":70,"humidity":32,"temp_low":55,"temp_high":72,"precip":0,"icon":"800","tomorrow_temp_low":56,"tomorrow_temp_high":68,"tomorrow_icon":"500","tomorrow_precip":3,"wind_speed":3,"wind_speed_gust":0,"wind_dir":"ENE","id":"weather","updatedAt":1463702995}
+weather: ! 'data: {"now_temp":64,"humidity":42,"temp_low":63,"temp_high":66,"precip":0,"icon":"804","tomorrow_temp_low":54,"tomorrow_temp_high":63,"tomorrow_icon":"500","tomorrow_precip":57,"wind_speed":3,"wind_speed_gust":0,"wind_dir":"S","id":"weather","updatedAt":1463878379}
 
 
 '
@@ -27,11 +27,11 @@ BR1_wall1: ! 'data: {"state":"OFF","id":"BR1_wall1","updatedAt":1463179003}
 
 
 '
-BR1_bed1: ! 'data: {"state":"OFF","id":"BR1_bed1","updatedAt":1463364643}
+BR1_bed1: ! 'data: {"state":"OFF","id":"BR1_bed1","updatedAt":1463867296}
 
 
 '
-door_main: ! 'data: {"state":"ON","id":"door_main","updatedAt":1463250476}
+door_main: ! 'data: {"state":"ON","id":"door_main","updatedAt":1463874300}
 
 
 '
@@ -55,11 +55,11 @@ roomTemp: ! 'data: {"state":"69.0","id":"roomTemp","updatedAt":1462154716}
 
 
 '
-heatac: ! 'data: {"state":"ON","id":"heatac","updatedAt":1463364197}
+heatac: ! 'data: {"state":"OFF","id":"heatac","updatedAt":1463853788}
 
 
 '
-fan_state: ! 'data: {"state":"OFF","id":"fan_state","updatedAt":1463522115}
+fan_state: ! 'data: {"state":"ON","id":"fan_state","updatedAt":1463878380}
 
 
 '
@@ -79,7 +79,7 @@ fanText: ! 'data: {"fanText":"ON","id":"fanText","updatedAt":1462392086}
 
 
 '
-thermoPow: ! 'data: {"fanText":"On","id":"thermoPow","updatedAt":1463522104}
+thermoPow: ! 'data: {"fanText":"On","id":"thermoPow","updatedAt":1463861741}
 
 
 '
@@ -107,15 +107,16 @@ music_stop: ! 'data: {"icon":"stop","id":"music_stop","updatedAt":1463345795}
 
 
 '
-music_playPause: ! 'data: {"icon":"pause","id":"music_playPause","updatedAt":1463362264}
+music_playPause: ! 'data: {"icon":"play","id":"music_playPause","updatedAt":1463874999}
 
 
 '
-music_info: ! 'data: {"song_class":"song_big","artist":"","album":"","song":"Stopped","id":"music_info","updatedAt":1463364772}
+music_info: ! 'data: {"artist_class":"artist_big","song_class":"song_big","song":"Brand
+  New Day","album":"Moondance","artist":"Van Morrison","id":"music_info","updatedAt":1463878381}
 
 
 '
-music_volume: ! 'data: {"title":"55%","id":"music_volume","updatedAt":1463364769}
+music_volume: ! 'data: {"title":"90%","id":"music_volume","updatedAt":1463878381}
 
 
 '
@@ -123,11 +124,24 @@ music_player: ! 'data: {"song_class":"song_medium","song":"Loading Music...","id
 
 
 '
-expenseInfo: ! 'data: {"message":"Cost: $75","id":"expenseInfo","updatedAt":1463847450}
+expenseInfo: ! 'data: {"title_class":"title_big","middle_class":"middle_big","message_class":"message_big","title":"Select
+  Category or Payment","middle":"","message":"","id":"expenseInfo","updatedAt":1463878531}
 
 
 '
-costSend: ! 'data: {"background_class":"background_green","id":"costSend","updatedAt":1463847449}
+costSend: ! 'data: {"background":"grey","id":"costSend","updatedAt":1463878531}
+
+
+'
+costYes: ! 'data: {"background":"grey","id":"costYes","updatedAt":1463878531}
+
+
+'
+costNope: ! 'data: {"background":"grey","id":"costNope","updatedAt":1463878531}
+
+
+'
+costNo: ! 'data: {"background":"red","id":"costNo","updatedAt":1463877170}
 
 
 '

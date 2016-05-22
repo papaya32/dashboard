@@ -5,7 +5,17 @@ class Dashing.Number extends Dashing.ClickableWidget
   onData: (data) ->
     # Fired when you receive data
     # You could do something like have the widget flash each time data comes in by doing:
-    # $(@node).fadeOut().fadeIn()
+    console.log data
+#    jsonData = JSON.parse(data)
+    if (data.background == "green")
+      #green background
+      $(@node).css('background-color', '#00b300')
+    else if (data.background == "grey")
+      #grey background
+      $(@node).css('background-color', '#333333')
+    else if (data.background == "red")
+      #red background
+      $(@node).css('background-color', '#cc0000')
 
   # Any attribute that has the 'Dashing.AnimatedValue' will cause the number to animate when it changes. 
   @accessor 'current', Dashing.AnimatedValue

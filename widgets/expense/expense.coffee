@@ -5,5 +5,5 @@ class Dashing.Expense extends Dashing.ClickableWidget
   ready: ->
     $.post '/expense/start'
   onData: (data) ->
-      
+    debugger      
   onClick: (event) ->

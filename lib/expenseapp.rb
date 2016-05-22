@@ -20,6 +20,12 @@ class ExpenseApp
     @sendReady = 0
     @costStat = 0
     @shareStat = 0
+    @questionNum = 0
+    @answer1 = 0
+    @answer2 = 0
+    send_event('costSend', { background: "grey" })
+    send_event('costYes', { background: "grey" })
+    send_event('costNope', { background: "grey" })
   end
 
   def expenseButton(button)
@@ -67,7 +73,8 @@ class ExpenseApp
     elsif (type == "RESET")
       initialize()
       expenseStart()
-    elsif (type == "SEND") && !(@sendReady == 1)
+      send_event('costSend', { background: "grey" })
+    elsif (type == "SEND") && (@sendReady == 1)
       #send stuff
       time = Time.new
       if (time.month.to_s.length == 1)
@@ -80,6 +87,7 @@ class ExpenseApp
       else
         day = time.day.to_s
       end
+
       currentTime = time.year.to_s + month + day
 
       client = Mysql2::Client.new(
@@ -90,20 +98,48 @@ class ExpenseApp
         :database => SQL_Database )
 
       expense_id = Random.new_seed.to_s[8..14]
-      categoryF = %Q[INSERT INTO #{payment} ( expense_id, expense_cat, expense_cost, submission_date ) VALUES (#{expense_id}, "#{@category}", #{@cost}, #{currentTime} );]
+      categoryF = %Q[INSERT INTO #{payment} ( expense_id, expense_cat, expense_cost, submission_date, expense_shared, expense_alc ) VALUES (#{expense_id}, "#{@category}", #{@cost}, #{currentTime}, "#{@answer1}", "#{@answer2}" );]
       client.query("#{categoryF}")
+      send_event( 'expenseInfo', { title: "Submitted", message: "Trans No.: #{expense_id}" })
+      send_event( 'costSend', { background: "grey" })
       puts @category
       puts @payment
       puts @cost
-    elsif (type == "CHOICE") && (@questionStat == 1)
+      @questionNum = 0
+      @sendReady = 0
+    elsif (type == "SEND")
+      questions()
+    elsif (type == "CHOICE")
       #question stuff
-    elsif (type == "NUMBER") && (category != 0) && (payment != 0)
+      if (@questionNum == 2) && (@category == "Else")
+        @answer2 = value[4..(value.length - 1)]
+        send_event('costSend', { background: "green" })
+        send_event('expenseInfo', { title: "Ready to Send", message: "" })
+        send_event( 'costYes', { background: "grey" })
+        send_event( 'costNope', { background: "grey" })
+        @sendReady = 1
+      elsif (@questionNum == 1)
+        @answer1 = value[4..(value.length - 1)]
+        if (@category == "Else")
+          @questionNum = 2
+          questions()
+        else
+          send_event( 'costYes', { background: "grey" })
+          send_event( 'costNope', { background: "grey" })
+          send_event('costSend', { background: "green" })
+          send_event('expenseInfo', { title: "Ready to Send", message: "" })
+          @sendReady = 1
+        end
+      end
+    elsif (type == "NUMBER") && (@category != 0) && (@payment != 0)
       if (@costStat == 0)
         @cost = value[4]
         temp = "Cost: $" + @cost
         send_event('expenseInfo', { message: "#{temp}" })
-        send_event('costSend', { background_class: "background_green" })
+        send_event('costSend', { background: "green" })
         @costStat = 1
+        @priceReady = 1
+        @questionNum = 1
       else
         @cost = @cost + value[4]
         temp = "Cost: $" + @cost
@@ -120,4 +156,21 @@ class ExpenseApp
     send_event('expenseInfo', { title_class: "title_big", middle_class: "middle_big", message_class: "message_big", title: "Select Category or Payment", middle: "", message: "" })
   end
 
+  def questions()
+    if (@questionNum == 1)
+      send_event('expenseInfo', { title: "Shared Payment?", message: "Yes or No" })
+      send_event('costYes', { background: "green" })
+      send_event('costNope', { background: "red" })
+      send_event('costSend', { background: "grey" })
+    elsif (@questionNum == 2) && (@category = "Else")
+      send_event('expenseInfo', { title: "Alcoholic?", message: "Yes or No" })
+      send_event('costYes', { background: "green" })
+      send_event('costNope', { background: "red" })
+      send_event('costSend', { background: "grey" })
+    else
+      send_event('costYes', { background: "grey" })
+      send_event('costNope', { background: "grey" })
+      @sendReady = 1
+    end
+  end
 end
